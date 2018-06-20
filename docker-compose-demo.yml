@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+    grid-router:
+      image: aerokube/ggr
+      network_mode: bridge
+      ports:
+        - "4444:4444"
+      volumes:
+        - "/etc/grid-router/:/etc/grid-router/"
+
+    selenoid:
+      image: ivanokman/selenoid
+      network_mode: bridge
+      ports:
+        - "4445:4445"
+      volumes:
+        - "$PWD/config:/etc/selenoid"
+        - "/var/run/docker.sock:/var/run/docker.sock"
+        - "$PWD/video:/opt/selenoid/video"
+      environment:
+        - DOCKER_API_VERSION=1.35
+      command: ["-conf", "/etc/selenoid/browsers.json", "-video-output-dir", "$PWD/video"]
+
+    selenoid-ui:
+      image: aerokube/selenoid-ui
+      network_mode: bridge
+      links:
+        - selenoid
+      ports:
+        - "8080:8080"
+      command: --selenoid-uri http://selenoid:4445 --listen 0.0.0.0:8080
+
+
