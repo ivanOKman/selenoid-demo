@@ -2,20 +2,23 @@
 <browser name="firefox" defaultVersion="58.0">
     <version number="58.0">
         <region name="1">
+                <host name="192.168.33.89" port="4444" count="1"/>
                 <host name="192.168.33.89" port="4445" count="1"/>
         </region>
     </version>
 </browser>
 <browser name="chrome" defaultVersion="65.0">
     <version number="65.0">
-        <region name="2">
+        <region name="1">
+                <host name="192.168.33.89" port="4444" count="1"/>
                 <host name="192.168.33.89" port="4445" count="1"/>
         </region>
     </version>
 </browser>
 <browser name="opera" defaultVersion="51.0">
     <version number="51.0">
-        <region name="3">
+        <region name="1">
+                <host name="192.168.33.89" port="4444" count="1"/>
                 <host name="192.168.33.89" port="4445" count="1"/>
         </region>
     </version>
