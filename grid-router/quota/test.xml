@@ -3,7 +3,6 @@
     <version number="59.0">
         <region name="1">
                 <host name="192.168.33.89" port="4444" count="1"/>
-                <host name="192.168.33.89" port="4445" count="1"/>
         </region>
     </version>
 </browser>
@@ -11,7 +10,6 @@
     <version number="66.0">
         <region name="1">
                 <host name="192.168.33.89" port="4444" count="1"/>
-                <host name="192.168.33.89" port="4445" count="1"/>
         </region>
     </version>
 </browser>
